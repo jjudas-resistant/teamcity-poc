@@ -31,4 +31,8 @@ project {
 
 object UnitTests : BuildType({
     name = "Unit tests"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 })
