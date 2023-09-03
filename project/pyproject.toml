@@ -1,0 +1,18 @@
+[tool.poetry]
+name = 'bp-project'
+version = '0.1'
+description = 'Nothing'
+authors = []
+
+[tool.poetry.dependencies]
+boto3 = '^1.28'
+mypy-boto3-s3 = '^1.28'
+python = '~3.11'
+
+[tool.poetry.group.dev.dependencies]
+moto = { version = '^4.1', extras = ['s3'] }
+pytest = '^7.2'
+
+[build-system]
+requires = ['poetry-core']
+build-backend = 'poetry.core.masonry.api'
