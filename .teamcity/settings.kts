@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.python
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
@@ -37,6 +38,17 @@ object UnitTests : BuildType({
 
     vcs {
         root(Project_1, "+:project => .")
+    }
+
+    steps {
+        python {
+            name = "Run unit tests"
+            environment = poetry {
+            }
+            command = pytest {
+                isCoverageEnabled = true
+            }
+        }
     }
 })
 
