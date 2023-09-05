@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -22,9 +23,11 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2022.10"
+version = "2023.05"
 
 project {
+
+    vcsRoot(Project_1)
 
     buildType(UnitTests)
 }
@@ -34,5 +37,15 @@ object UnitTests : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
+    }
+})
+
+object Project_1 : GitVcsRoot({
+    id("Project")
+    name = "Project"
+    url = "git@github.com:jjudas-resistant/teamcity-poc.git"
+    branch = "main"
+    authMethod = uploadedKey {
+        uploadedKey = "teamcity_server"
     }
 })
