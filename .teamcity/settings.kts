@@ -31,8 +31,13 @@ project {
 
     vcsRoot(Project_1)
 
+    buildType(CheckVulnerabilities)
     buildType(UnitTests)
 }
+
+object CheckVulnerabilities : BuildType({
+    name = "Check vulnerabilities"
+})
 
 object UnitTests : BuildType({
     name = "Unit tests"
