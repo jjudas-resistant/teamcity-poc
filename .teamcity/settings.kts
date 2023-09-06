@@ -104,4 +104,10 @@ object Project_1 : GitVcsRoot({
 
 object Deployment : Project({
     name = "Deployment"
+
+    buildType(Deployment_DeployToTesting)
+})
+
+object Deployment_DeployToTesting : BuildType({
+    name = "Deploy to testing"
 })
