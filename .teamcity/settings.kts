@@ -115,11 +115,6 @@ object Deployment : Project({
 object Deployment_DeployToProd : BuildType({
     name = "Deploy to prod"
 
-    params {
-        select("Customer", "", display = ParameterDisplay.PROMPT,
-                options = listOf("customer1", "customer2", "customer3"))
-    }
-
     vcs {
         root(Project_1)
     }
