@@ -122,7 +122,7 @@ object Deployment_DeployToProd : BuildType({
     steps {
         script {
             name = "Deploy"
-            scriptContent = """echo "Deploying ${Deployment_DeployToTesting.depParamRefs["Customer"]} to testing""""
+            scriptContent = """echo "Deploying ${Deployment_DeployToTesting.depParamRefs["Customer"]} to prod""""
         }
     }
 
