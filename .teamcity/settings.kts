@@ -97,6 +97,7 @@ object Project_1 : GitVcsRoot({
     name = "Project"
     url = "git@github.com:jjudas-resistant/teamcity-poc.git"
     branch = "main"
+    branchSpec = "+:*"
     authMethod = uploadedKey {
         uploadedKey = "teamcity_server"
     }
