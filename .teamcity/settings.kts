@@ -37,6 +37,10 @@ project {
 
 object CheckVulnerabilities : BuildType({
     name = "Check vulnerabilities"
+
+    vcs {
+        root(Project_1)
+    }
 })
 
 object UnitTests : BuildType({
