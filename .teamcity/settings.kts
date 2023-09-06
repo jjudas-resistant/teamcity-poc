@@ -142,4 +142,11 @@ object Review_DeployToReview : BuildType({
     vcs {
         root(Project_1)
     }
+
+    steps {
+        script {
+            name = "Deploy to review"
+            scriptContent = """echo "Deploying """"
+        }
+    }
 })
