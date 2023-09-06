@@ -153,5 +153,9 @@ object Review_DeployToReview : BuildType({
             name = "Deploy to review"
             scriptContent = """echo "Deploying """"
         }
+        script {
+            name = "Deploy to review (1)"
+            scriptContent = """echo "Deploying %Customer% to review for branch %build.vcs.number%""""
+        }
     }
 })
