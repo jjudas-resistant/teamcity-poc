@@ -119,4 +119,11 @@ object Deployment_DeployToTesting : BuildType({
     vcs {
         root(Project_1)
     }
+
+    steps {
+        script {
+            name = "Deploy"
+            scriptContent = """echo "Deploying %Customer% to testing""""
+        }
+    }
 })
