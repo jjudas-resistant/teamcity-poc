@@ -129,6 +129,12 @@ object Deployment_DeployToProd : BuildType({
             scriptContent = """echo "Deploying %Customer% to testing""""
         }
     }
+
+    dependencies {
+        snapshot(Deployment_DeployToTesting) {
+            onDependencyFailure = FailureAction.FAIL_TO_START
+        }
+    }
 })
 
 object Deployment_DeployToTesting : BuildType({
