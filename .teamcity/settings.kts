@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.python
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
@@ -48,6 +49,12 @@ object UnitTests : BuildType({
             command = pytest {
                 isCoverageEnabled = true
             }
+        }
+    }
+
+    triggers {
+        vcs {
+            branchFilter = ""
         }
     }
 })
