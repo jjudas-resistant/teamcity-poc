@@ -40,7 +40,7 @@ object CheckVulnerabilities : BuildType({
     name = "Check vulnerabilities"
 
     vcs {
-        root(Project_1)
+        root(Project_1, "+:project => .")
     }
 
     steps {
