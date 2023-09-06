@@ -150,10 +150,6 @@ object Review_DeployToReview : BuildType({
 
     steps {
         script {
-            name = "Deploy to review"
-            scriptContent = """echo "Deploying """"
-        }
-        script {
             name = "Deploy to review (1)"
             scriptContent = """echo "Deploying %Customer% to review for branch %build.vcs.number%""""
         }
