@@ -107,7 +107,28 @@ object Project_1 : GitVcsRoot({
 object Deployment : Project({
     name = "Deployment"
 
+    buildType(Deployment_DeployToProd)
     buildType(Deployment_DeployToTesting)
+})
+
+object Deployment_DeployToProd : BuildType({
+    name = "Deploy to prod"
+
+    params {
+        select("Customer", "", display = ParameterDisplay.PROMPT,
+                options = listOf("customer1", "customer2", "customer3"))
+    }
+
+    vcs {
+        root(Project_1)
+    }
+
+    steps {
+        script {
+            name = "Deploy"
+            scriptContent = """echo "Deploying %Customer% to testing""""
+        }
+    }
 })
 
 object Deployment_DeployToTesting : BuildType({
