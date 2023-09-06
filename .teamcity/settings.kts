@@ -38,6 +38,7 @@ project {
     buildTypesOrder = arrayListOf(UnitTests, CheckVulnerabilities)
 
     subProject(Deployment)
+    subProject(Review)
 }
 
 object CheckVulnerabilities : BuildType({
@@ -126,4 +127,9 @@ object Deployment_DeployToTesting : BuildType({
             scriptContent = """echo "Deploying %Customer% to testing""""
         }
     }
+})
+
+
+object Review : Project({
+    name = "Review"
 })
