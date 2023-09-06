@@ -36,6 +36,8 @@ project {
     buildType(CheckVulnerabilities)
     buildType(UnitTests)
     buildTypesOrder = arrayListOf(UnitTests, CheckVulnerabilities)
+
+    subProject(Deployment)
 }
 
 object CheckVulnerabilities : BuildType({
@@ -97,4 +99,9 @@ object Project_1 : GitVcsRoot({
     authMethod = uploadedKey {
         uploadedKey = "teamcity_server"
     }
+})
+
+
+object Deployment : Project({
+    name = "Deployment"
 })
