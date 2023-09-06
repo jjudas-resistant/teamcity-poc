@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.python
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
@@ -47,6 +48,17 @@ object CheckVulnerabilities : BuildType({
         script {
             name = "Run the script"
             scriptContent = """echo "There are no vulnerabilities""""
+        }
+    }
+
+    triggers {
+        schedule {
+            schedulingPolicy = daily {
+                hour = 2
+            }
+            branchFilter = ""
+            triggerBuild = always()
+            withPendingChangesOnly = false
         }
     }
 })
