@@ -17,4 +17,4 @@ def test_whatever() -> None:
 
 class TestMore:
     def test_something(self) -> None:
-        assert 1 < 5
+        assert 1 < 6
