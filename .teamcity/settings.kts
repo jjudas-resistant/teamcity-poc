@@ -132,4 +132,10 @@ object Deployment_DeployToTesting : BuildType({
 
 object Review : Project({
     name = "Review"
+
+    buildType(Review_DeployToReview)
+})
+
+object Review_DeployToReview : BuildType({
+    name = "Deploy to review"
 })
