@@ -138,4 +138,8 @@ object Review : Project({
 
 object Review_DeployToReview : BuildType({
     name = "Deploy to review"
+
+    vcs {
+        root(Project_1)
+    }
 })
