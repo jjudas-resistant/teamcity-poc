@@ -110,4 +110,8 @@ object Deployment : Project({
 
 object Deployment_DeployToTesting : BuildType({
     name = "Deploy to testing"
+
+    vcs {
+        root(Project_1)
+    }
 })
