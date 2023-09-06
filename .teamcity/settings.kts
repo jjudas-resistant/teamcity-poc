@@ -35,6 +35,7 @@ project {
 
     buildType(CheckVulnerabilities)
     buildType(UnitTests)
+    buildTypesOrder = arrayListOf(UnitTests, CheckVulnerabilities)
 }
 
 object CheckVulnerabilities : BuildType({
