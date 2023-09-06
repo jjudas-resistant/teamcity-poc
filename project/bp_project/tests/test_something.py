@@ -13,3 +13,8 @@ def test_whatever() -> None:
     result = whatever(client, 'bucket', 'file.txt')
 
     assert result == 'abcd'
+
+
+class TestMore:
+    def test_something(self) -> None:
+        assert 1 < 5
