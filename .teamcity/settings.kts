@@ -109,6 +109,7 @@ object Deployment : Project({
 
     buildType(Deployment_DeployToProd)
     buildType(Deployment_DeployToTesting)
+    buildTypesOrder = arrayListOf(Deployment_DeployToTesting, Deployment_DeployToProd)
 })
 
 object Deployment_DeployToProd : BuildType({
