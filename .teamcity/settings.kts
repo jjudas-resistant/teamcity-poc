@@ -139,6 +139,11 @@ object Review : Project({
 object Review_DeployToReview : BuildType({
     name = "Deploy to review"
 
+    params {
+        select("Customer", "", display = ParameterDisplay.PROMPT,
+                options = listOf("customer1", "customer2", "customer3"))
+    }
+
     vcs {
         root(Project_1)
     }
